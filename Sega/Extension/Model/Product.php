@@ -57,11 +57,11 @@ class Product
      * @param $params
      * @throws \Magento\Framework\Exception\LocalizedException
      */
-//    public function addCustomProduct($productObj, $params)
-//    {
-//        $this->cart->addProduct($productObj, $params);
-//        $this->cart->save();
-//    }
+    public function addCustomProduct($productObj, $params)
+    {
+        $this->cart->addProduct($productObj, $params);
+        $this->cart->save();
+    }
 
     /**
      * @throws \Magento\Framework\Exception\LocalizedException
@@ -81,9 +81,9 @@ class Product
                             'form_key'     => $this->formKey->getFormKey(),
                             'product_id'   => $product_id,
                             'qty'          => 1
+
                         ];
-                        $this->cart->addProduct($productObj, $params);
-                        $this->cart->save();
+                        $this->addCustomProduct($productObj, $params);
                     }
                     catch (\Exception $e){
                         return 'Error';
